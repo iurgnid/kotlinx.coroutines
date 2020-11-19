@@ -8,10 +8,16 @@ package kotlinx.coroutines.guide.exampleCancel08
 import kotlinx.coroutines.*
 
 var acquired = 0
-
+var count=0
+var addCount = 0
+var sunCount=0
 class Resource {
-    init { acquired++ } // Acquire the resource
-    fun close() { acquired-- } // Release the resource
+    init { acquired++
+    println("${addCount++}")
+    } // Acquire the resource
+    fun close() { acquired--
+        println("${sunCount++}")
+    } // Release the resource
 }
 
 fun main() {
